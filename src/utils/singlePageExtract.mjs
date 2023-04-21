@@ -15,7 +15,7 @@ export const singlePageExtract = async (url) => {
 
     const breadCrumbsSelector = 'nav[aria-label="breadcrumbs"] > ol > li > a';
 
-    console.log($(breadCrumbsSelector));
+    // console.log($(breadCrumbsSelector));
 
     const breadcrumbsSelection = $(breadCrumbsSelector);
 
@@ -31,9 +31,13 @@ export const singlePageExtract = async (url) => {
       }
     });
 
+    productData.url = url;
+
     productData.breadcrumbs = breadcrumbs;
 
     productData.title = $("#product-page-title").text();
+
+    productData.brand = $("#product-brand-link").text();
 
     productData.price = $("#buy-box-price").text();
 

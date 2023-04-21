@@ -6,4 +6,4 @@ const data = await singlePageExtract(
   "https://www.rei.com/product/217409/rei-co-op-trailmade-60-pack-mens"
 );
 
-console.log(data);
+// console.log(data);

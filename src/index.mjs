@@ -98,8 +98,14 @@ const writeFilePath = path.normalize(`${__dirname}/../data/productInfo.json`);
 //   );
 // }
 
-allData.forEach((pd) => {
+const nonEmptyData = [];
+
+allData.forEach((pd, i) => {
   if (pd.value) {
-    fs.writeFileSync(writeFilePath, JSON.stringify(pd) + "\n", { flag: "a" });
+    console.log("saving product no", i);
+    nonEmptyData.push(pd.value);
   }
 });
+
+console.log("writing all valid products");
+fs.writeFileSync(writeFilePath, JSON.stringify(nonEmptyData), { flag: "a" });

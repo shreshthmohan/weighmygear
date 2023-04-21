@@ -30,4 +30,4 @@ const response = await fetch(url, {
 
 const d = await response.text();
 
-console.log(d);
+// console.log(d);
